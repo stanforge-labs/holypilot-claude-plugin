@@ -7,11 +7,11 @@ description: Use when a HolyPilot account connection fails, access is uncertain,
 
 ## English workflow
 
-First select the account via `list_connected_resources`; then call `get_account_status` with `{ "provider": "GOOGLE_ADS", "account_id": "<selected string>" }`. This is a database status, with source `v2_database_provider_account`; DB active does not prove live provider OAuth. If asked for a live check, call `run_connection_diagnostics` with the same provider and account_id only when authorized and available. Distinguish database inventory from a successful provider response and give the returned provenance.
+First select the account via `list_connected_resources`; then call `get_account_status` with `{ "provider": "GOOGLE_ADS", "account_id": "<selected string>" }`. This is a database status, with source `v2_database_provider_account`; DB active does not prove live provider OAuth. If asked for a live check, call `run_connection_diagnostics` with the same provider and account_id only when authorized and available. This live check can refresh and persist an expiring OAuth credential server-side; it is not annotated read-only or idempotent. Distinguish database inventory from a successful provider response and give the returned provenance.
 
 ## Русский сценарий
 
-Сначала выберите ресурс, затем вызовите `get_account_status` с точным `provider` и строковым `account_id`. Статус БД не означает действующий OAuth. Только успешный `run_connection_diagnostics` подтверждает отдельную проверку провайдера; укажите источник результата.
+Сначала выберите ресурс, затем вызовите `get_account_status` с точным `provider` и строковым `account_id`. Статус БД не означает действующий OAuth. Успешный `run_connection_diagnostics` подтверждает отдельную проверку провайдера, но может обновить и сохранить истекающие учётные данные OAuth на сервере; он не помечен как read-only или idempotent. Укажите источник результата.
 
 ## User request / Пример запроса
 
