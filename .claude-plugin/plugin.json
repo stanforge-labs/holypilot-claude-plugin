@@ -1,0 +1,17 @@
+{
+  "name": "holypilot",
+  "displayName": "HolyPilot",
+  "version": "1.0.0",
+  "description": "Analyze connected advertising and analytics data with 15 bilingual workflows and the HolyPilot read-only MCP connector.",
+  "author": {
+    "name": "HolyMedia",
+    "url": "https://mcp.holymedia.kz/"
+  },
+  "homepage": "https://mcp.holymedia.kz/",
+  "icon": "./assets/holy-pilot-symbol.svg",
+  "documentationUrl": "https://mcp.holymedia.kz/",
+  "supportUrl": "https://mcp.holymedia.kz/support",
+  "privacyPolicyUrl": "https://mcp.holymedia.kz/privacy",
+  "termsOfServiceUrl": "https://mcp.holymedia.kz/terms",
+  "keywords": ["marketing", "advertising", "analytics", "mcp"]
+}
