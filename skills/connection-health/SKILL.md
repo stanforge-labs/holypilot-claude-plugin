@@ -1,25 +1,25 @@
 ---
 name: connection-health
-description: Диагностика подключения. Use when a HolyPilot account connection fails, access is uncertain, or the user asks whether data is live.
+description: Состояние подключения. Use when a HolyPilot account connection fails, access is uncertain, or the user asks whether stored status proves live access.
 ---
 
 # connection health / HolyPilot
 
 ## English workflow
 
-First select the account via `list_connected_resources`; then call `get_account_status` with `{ "provider": "GOOGLE_ADS", "account_id": "<selected string>" }`. This is a database status, with source `v2_database_provider_account`; DB active does not prove live provider OAuth. If asked for a live check, call `run_connection_diagnostics` with the same provider and account_id only when authorized and available. This live check can refresh and persist an expiring OAuth credential server-side; it is not annotated read-only or idempotent. Distinguish database inventory from a successful provider response and give the returned provenance.
+First select the account via `list_connected_resources`; then call `get_account_status` with `{ "provider": "GOOGLE_ADS", "account_id": "<selected string>" }`. For a real account this reads stored database status (`v2_database_provider_account`); a demo result has synthetic provenance. DB active does not prove live provider OAuth. The public connector does not expose live connection diagnostics. If the user also requests specific provider data, use only the relevant public READ tool for their selected account and report whether that particular request succeeded, with its returned provenance. Do not infer general connection health from stored status or a different account's result.
 
 ## Русский сценарий
 
-Сначала выберите ресурс, затем вызовите `get_account_status` с точным `provider` и строковым `account_id`. Статус БД не означает действующий OAuth. Успешный `run_connection_diagnostics` подтверждает отдельную проверку провайдера, но может обновить и сохранить истекающие учётные данные OAuth на сервере; он не помечен как read-only или idempotent. Укажите источник результата.
+Сначала выберите ресурс через `list_connected_resources`, затем вызовите `get_account_status` с точным `provider` и строковым `account_id`. Для реального аккаунта источник статуса БД — `v2_database_provider_account`; у demo-ответа синтетический provenance. Статус БД не означает действующий OAuth. Публичный коннектор не предоставляет live-диагностику. Если пользователь также просит конкретные данные провайдера, используйте соответствующий публичный READ-инструмент только для выбранного аккаунта и сообщите результат именно этого запроса и его provenance. Не делайте вывод о живом подключении по статусу БД или другому аккаунту.
 
 ## User request / Пример запроса
 
-> Is this Google Ads connection working now? / Работает ли сейчас это подключение Google Ads?
+> What does HolyPilot know about this Google Ads connection, and can you read its campaigns for the last seven completed days? / Какой статус этого Google Ads подключения хранится в HolyPilot и доступны ли кампании за последние семь завершённых дней?
 
 ## Expected answer / Ожидаемый ответ
 
-DB status and any separate live diagnostic, timestamps, safe error code, next action; do not expose credentials.
+Stored DB status, source and `live_connection_checked=false`; if a separately requested provider READ succeeds, report only that operation's result and provenance. Otherwise state that live access remains unverified or provide the safe error code and next action. Do not expose credentials.
 
 For every quantitative answer state the account or property, exact dates, currency when monetary, source tool/API and returned provenance. Separate facts from interpretation; state missing rows, pagination, and confidence. / Для каждого численного вывода укажите ресурс, даты, валюту, источник и provenance; отделяйте факты от интерпретации.
 
