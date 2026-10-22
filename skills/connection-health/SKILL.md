@@ -7,11 +7,11 @@ description: Состояние подключения. Use when a HolyPilot acc
 
 ## English workflow
 
-First select the account via `list_connected_resources`; then call `get_account_status` with `{ "provider": "GOOGLE_ADS", "account_id": "<selected string>" }`. This reads stored database status, with source `v2_database_provider_account`; DB active does not prove live provider OAuth. The public connector does not expose live connection diagnostics. If the user also requests specific provider data, use only the relevant public READ tool for their selected account and report whether that particular request succeeded, with its returned provenance. Do not infer general connection health from stored status or a different account's result.
+First select the account via `list_connected_resources`; then call `get_account_status` with `{ "provider": "GOOGLE_ADS", "account_id": "<selected string>" }`. For a real account this reads stored database status (`v2_database_provider_account`); a demo result has synthetic provenance. DB active does not prove live provider OAuth. The public connector does not expose live connection diagnostics. If the user also requests specific provider data, use only the relevant public READ tool for their selected account and report whether that particular request succeeded, with its returned provenance. Do not infer general connection health from stored status or a different account's result.
 
 ## Русский сценарий
 
-Сначала выберите ресурс через `list_connected_resources`, затем вызовите `get_account_status` с точным `provider` и строковым `account_id`. Статус БД не означает действующий OAuth. Публичный коннектор не предоставляет live-диагностику. Если пользователь также просит конкретные данные провайдера, используйте соответствующий публичный READ-инструмент только для выбранного аккаунта и сообщите результат именно этого запроса и его provenance. Не делайте вывод о живом подключении по статусу БД или другому аккаунту.
+Сначала выберите ресурс через `list_connected_resources`, затем вызовите `get_account_status` с точным `provider` и строковым `account_id`. Для реального аккаунта источник статуса БД — `v2_database_provider_account`; у demo-ответа синтетический provenance. Статус БД не означает действующий OAuth. Публичный коннектор не предоставляет live-диагностику. Если пользователь также просит конкретные данные провайдера, используйте соответствующий публичный READ-инструмент только для выбранного аккаунта и сообщите результат именно этого запроса и его provenance. Не делайте вывод о живом подключении по статусу БД или другому аккаунту.
 
 ## User request / Пример запроса
 
