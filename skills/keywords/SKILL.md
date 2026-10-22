@@ -1,6 +1,6 @@
 ---
 name: keywords
-description: Use when the user asks for Google Ads positive keyword inventory and period metrics for a selected client account. Анализ ключевых слов Google Ads.
+description: Анализ ключевых слов Google Ads. Use when the user asks for Google Ads positive keyword inventory and period metrics for a selected client account.
 ---
 
 # keywords / HolyPilot

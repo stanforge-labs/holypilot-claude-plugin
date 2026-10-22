@@ -1,6 +1,6 @@
 ---
 name: meta-ads
-description: Use when the user requests Meta Ads campaign or insights analysis from an authorized connected Meta account. Аналитика Meta Ads.
+description: Аналитика Meta Ads. Use when the user requests Meta Ads campaign or insights analysis from an authorized connected Meta account.
 ---
 
 # meta ads / HolyPilot

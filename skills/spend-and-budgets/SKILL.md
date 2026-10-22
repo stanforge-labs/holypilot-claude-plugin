@@ -1,6 +1,6 @@
 ---
 name: spend-and-budgets
-description: Use when a user asks how much an account spent or which campaigns may need budget attention; read-only planning. Расходы и бюджеты без изменения ставок.
+description: Расходы и бюджеты без изменения ставок. Use when a user asks how much an account spent or which campaigns may need budget attention; read-only planning.
 ---
 
 # spend and budgets / HolyPilot

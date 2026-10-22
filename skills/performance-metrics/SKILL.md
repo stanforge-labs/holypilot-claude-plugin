@@ -1,6 +1,6 @@
 ---
 name: performance-metrics
-description: Use when the user asks for spend, clicks, conversions, CPA, ROAS, or a performance breakdown from an accessible ad account. Показатели эффективности.
+description: Показатели эффективности. Use when the user asks for spend, clicks, conversions, CPA, ROAS, or a performance breakdown from an accessible ad account.
 ---
 
 # performance metrics / HolyPilot

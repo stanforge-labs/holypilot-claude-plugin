@@ -1,6 +1,6 @@
 ---
 name: connection-health
-description: Use when a HolyPilot account connection fails, access is uncertain, or the user asks whether data is live. Диагностика подключения.
+description: Диагностика подключения. Use when a HolyPilot account connection fails, access is uncertain, or the user asks whether data is live.
 ---
 
 # connection health / HolyPilot

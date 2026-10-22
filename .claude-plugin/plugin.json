@@ -2,7 +2,7 @@
   "name": "holypilot",
   "displayName": "HolyPilot",
   "version": "1.0.0",
-  "description": "Analyze connected advertising and analytics data with 15 bilingual workflows and the OAuth-protected HolyPilot MCP connector.",
+  "description": "Ваш персональный AI-маркетолог для анализа рекламы и аналитики прямо в Claude.",
   "author": {
     "name": "HolyMedia",
     "url": "https://mcp.holymedia.kz/"

@@ -1,6 +1,6 @@
 ---
 name: period-comparison
-description: Use when the user requests a comparison of two advertising periods for the same selected account. Сравнение периодов.
+description: Сравнение периодов. Use when the user requests a comparison of two advertising periods for the same selected account.
 ---
 
 # period comparison / HolyPilot

@@ -1,6 +1,6 @@
 ---
 name: account-selection
-description: Use when a user needs to find and select one accessible HolyPilot workspace advertising account or analytics resource before analysis. Выбор доступного кабинета или ресурса.
+description: Выбор доступного кабинета или ресурса. Use when a user needs to find and select one accessible HolyPilot workspace advertising account or analytics resource before analysis.
 ---
 
 # account selection / HolyPilot

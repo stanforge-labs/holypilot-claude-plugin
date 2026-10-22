@@ -1,6 +1,6 @@
 ---
 name: optimization-opportunities
-description: Use when the user wants a ranked list of advertising optimization opportunities grounded in actual HolyPilot READ data. Поиск возможностей оптимизации.
+description: Поиск возможностей оптимизации. Use when the user wants a ranked list of advertising optimization opportunities grounded in actual HolyPilot READ data.
 ---
 
 # optimization opportunities / HolyPilot

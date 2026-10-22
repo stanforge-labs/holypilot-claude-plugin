@@ -1,6 +1,6 @@
 ---
 name: report-preparation
-description: Use when the user requests a monthly advertising management report or concise account summary from available HolyPilot data. Ежемесячный отчёт по фактическим данным.
+description: Ежемесячный отчёт по фактическим данным. Use when the user requests a monthly advertising management report or concise account summary from available HolyPilot data.
 ---
 
 # report preparation / HolyPilot

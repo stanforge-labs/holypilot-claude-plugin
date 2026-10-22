@@ -1,12 +1,14 @@
-# HolyPilot for Claude — v1.0.0
+# HolyPilot для Claude — v1.0.0
 
-HolyPilot is a HolyMedia product for company and agency workflows across authorized advertising and analytics resources. This plugin pairs 15 bilingual analytical Skills with HolyMedia's existing remote, OAuth-protected MCP connector. It is an independent third-party plugin, not an Anthropic product or Anthropic endorsement.
+**Ваш персональный AI-маркетолог.** HolyPilot от HolyMedia помогает анализировать рекламные кампании и маркетинговые показатели прямо в Claude. Просматривайте доступные рекламные кабинеты, изучайте расходы, клики и конверсии, сравнивайте периоды и формируйте отчёты с помощью 15 готовых AI-навыков. Поддерживаются подключённые источники рекламной и веб-аналитики, включая Google Ads, Meta Ads, Google Analytics 4 и Search Console. Доступность данных зависит от подключений и разрешений пользователя. Изменения рекламных кампаний через публичный коннектор недоступны.
 
-The bundle contains human-readable Markdown, JSON and the official SVG mark only. It does not run local code, install packages, collect Claude conversation history, or contain credentials. HolyMedia operates the remote service at `https://mcp.holymedia.kz/mcp/public`.
+Плагин объединяет 15 двуязычных навыков с удалённым MCP-коннектором HolyMedia, защищённым OAuth. Он предназначен для компаний, агентств и маркетинговых команд. Плагин независим от Anthropic и не означает одобрения Anthropic. В комплекте только читаемые Markdown, JSON и официальный SVG-знак: локальный код не запускается, пакеты не устанавливаются, пароли и токены не включены.
 
-## What it can do / Возможности
+**English.** HolyPilot is a HolyMedia product for company and agency workflows across authorized advertising and analytics resources. The plugin pairs 15 bilingual analytical Skills with HolyMedia's OAuth-protected remote MCP connector at `https://mcp.holymedia.kz/mcp/public`. Availability depends on connected providers and user permissions; the public connector does not modify advertising campaigns. This independent third-party plugin is not an Anthropic product or endorsement.
 
-| Workflow / Сценарий | Skills |
+## Возможности / What it can do
+
+| Сценарий / Workflow | Skills |
 | --- | --- |
 | Select accessible accounts, diagnose connections / Выбор ресурсов и диагностика | `account-selection`, `connection-health` |
 | List, inspect and analyze campaigns / Обзор и анализ кампаний | `campaign-overview`, `campaign-analysis` |
@@ -17,14 +19,19 @@ The bundle contains human-readable Markdown, JSON and the official SVG mark only
 
 Availability depends on the authenticated workspace, provider connection, billing entitlement and tools actually exposed in the current session. Listing an account is a database read, not proof that live provider OAuth works. A Google Ads manager (MCC) account cannot provide client campaign metrics directly; select an authorized client account explicitly. TikTok Ads and Yandex Direct can appear in account inventory, but this plugin makes no claim that their live campaign reads have passed provider acceptance.
 
-## Install and connect / Установка и подключение
+## Установка и подключение / Install and connect
+
+1. В Claude откройте **Настроить → Плагины → Добавить → Загрузить плагин** и выберите ZIP с папкой `holypilot`. В Claude Code используйте `claude --plugin-dir ./holypilot` из этого репозитория.
+2. На вкладке коннекторов плагина подключите **HolyPilot** по адресу `https://mcp.holymedia.kz/mcp/public`. Войдите через OAuth под своей учётной записью. Не вставляйте токены в Claude или файлы плагина.
+3. Запросите список доступных кабинетов и выберите конкретный аккаунт. Для Google Ads MCC выберите разрешённый клиентский аккаунт самостоятельно: метрики MCC напрямую недоступны.
+4. Запрашивайте данные за явный период. Проверяйте аккаунт, валюту, даты, источник (`provenance`) и ограничения ответа.
+
+**English instructions**
 
 1. In Claude chat, open **Customize → Plugins → Add → Upload plugin**, and select a ZIP containing the `holypilot` folder. In Claude Code, use `claude --plugin-dir ./holypilot` from this repository. Cowork uses the same plugin upload when available in the account.
 2. Open the plugin's **Connectors** tab. Add/connect **HolyPilot** if it is not connected. The MCP URL is `https://mcp.holymedia.kz/mcp/public`; sign in through the browser OAuth flow and grant only the scopes shown for your own account. Do not paste tokens into Claude or into this package.
 3. Confirm the connector shows **Connected**. Ask “Which advertising accounts can I access in my HolyPilot workspace?” Select a specific account before requesting metrics. For a Google Ads MCC, select a client account from your own authorized inventory.
 4. Ask a dated READ question. Verify the returned account, period, currency, provenance and limitations. A failed provider call should be reported by its safe machine code, not disguised as a successful report.
-
-Русский порядок: установите ZIP в **Настроить → Плагины**, подключите HolyPilot на вкладке коннекторов, войдите в собственную учётную запись через OAuth, затем запросите список доступных кабинетов. Выберите конкретный клиентский аккаунт и период до запроса метрик. Пароли и OAuth-токены не передавайте в чат.
 
 ## Three reviewer workflows / Три сценария для проверки
 
@@ -36,7 +43,7 @@ These require an authorized reviewer account with isolated **synthetic** data. N
 
 Additional provider-specific Skills need their respective connected demo provider or remain unverified at provider level; synthetic offline tests do not establish live Meta, GA4 or Search Console availability.
 
-## Safe interpretation and failures / Безопасность и ошибки
+## Безопасность и ошибки / Safe interpretation and failures
 
 The 15 plugin Skills use advertising and analytics READ workflows and do not invoke advertising WRITE. `run_connection_diagnostics` performs a live provider check and can refresh and persist an expiring OAuth credential server-side; its MCP annotations correctly do not mark it read-only or idempotent. The public registry may also include gated Meta preview/commit tools in other configurations. Production Google Ads WRITE remains disabled. The v0.1 preview and change-verification guidance is retained here: any future supported change requires a server-created preview, separate OWNER browser approval, and a later explicit one-time commit. Claude's permission prompt never replaces HolyPilot approval. Do not retry an uncertain commit blindly. None of this grants permission to change advertising data through v1.0.0.
 
@@ -44,13 +51,15 @@ When `google_ads_manager_metrics_unsupported` is returned, choose an authorized 
 
 При ошибке MCC не подбирайте дочерний аккаунт автоматически. Если OAuth истёк, попросите владельца переподключить источник. Если прав нет, остановите запрос. Неполную пагинацию и отсутствие данных отмечайте явно.
 
-## Data and privacy / Данные и конфиденциальность
+## Данные и конфиденциальность / Data and privacy
+
+Удалённый сервис получает только запросы авторизованного пользователя и возвращает данные, доступные его workspace. В зависимости от инструмента это могут быть названия и ID кабинетов, кампании, расходы, показатели, поисковые запросы и веб-аналитика. OAuth-данные хранятся на сервере HolyPilot и не входят в плагин или ответы MCP. Запрошенные результаты передаются в Claude для ответа пользователю. Порядок хранения, отключения и удаления описан в [Политике конфиденциальности](https://mcp.holymedia.kz/privacy); также доступны [Условия](https://mcp.holymedia.kz/terms) и [Поддержка](https://mcp.holymedia.kz/support).
 
 The remote MCP service receives authenticated requests and returns only data authorized for the user's HolyPilot workspace. Depending on the selected tool, this can include account names/IDs, campaigns, spend, performance, search terms, GA4 traffic and Search Console queries/pages. HolyPilot stores accounts, connections, reports and security records on its service under its published retention policy; OAuth credentials are stored server-side and are not included in the plugin or MCP responses. Claude receives requested tool results when a connected user asks it to process them. The plugin's instructions themselves send data to no additional endpoint.
 
 HolyMedia's [Privacy Policy](https://mcp.holymedia.kz/privacy) explains collection, retention, revocation and deletion requests. [Terms](https://mcp.holymedia.kz/terms) govern use. [Support](https://mcp.holymedia.kz/support) and `mcp@holymedia.kz` handle product/security concerns. These published policies use purpose-based retention rather than a fixed number of days; do not enter a numerical retention period in a directory form without owner/legal verification. Disconnect a provider in HolyPilot or revoke its grant with that provider; ask support for account deletion. Use Anthropic's own privacy terms for Claude-side processing.
 
-## Troubleshooting / Помощь
+## Помощь / Troubleshooting
 
 If the connector is not connected, complete browser OAuth. If accounts are absent, check the current workspace and connection in HolyPilot. If campaign metrics fail for an MCC, select an accessible client account. If the tool is missing or returns `billing_unavailable` or `quota_exceeded`, do not bypass the entitlement. If data is empty, report an empty result rather than a zero-valued finding. For help, contact [HolyPilot Support](https://mcp.holymedia.kz/support) without sending passwords, tokens or customer exports.
 

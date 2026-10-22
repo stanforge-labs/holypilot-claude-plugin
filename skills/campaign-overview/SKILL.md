@@ -1,6 +1,6 @@
 ---
 name: campaign-overview
-description: Use when the user asks to list, filter, or page through campaigns in a selected accessible advertising account. Обзор кампаний.
+description: Обзор кампаний. Use when the user asks to list, filter, or page through campaigns in a selected accessible advertising account.
 ---
 
 # campaign overview / HolyPilot

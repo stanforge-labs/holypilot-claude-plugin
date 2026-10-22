@@ -1,6 +1,6 @@
 ---
 name: ga4
-description: Use when the user asks about GA4 traffic, acquisition, pages or events in an enabled property. Аналитика Google Analytics 4.
+description: Аналитика Google Analytics 4. Use when the user asks about GA4 traffic, acquisition, pages or events in an enabled property.
 ---
 
 # ga4 / HolyPilot

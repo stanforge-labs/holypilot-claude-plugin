@@ -1,6 +1,6 @@
 ---
 name: search-console
-description: Use when the user asks about organic search queries, pages, clicks, impressions or CTR from an authorized Search Console property. SEO и Search Console.
+description: SEO и Search Console. Use when the user asks about organic search queries, pages, clicks, impressions or CTR from an authorized Search Console property.
 ---
 
 # search console / HolyPilot

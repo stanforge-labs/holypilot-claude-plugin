@@ -1,6 +1,6 @@
 ---
 name: campaign-analysis
-description: Use when a user asks why a selected advertising campaign performed as it did or wants campaign-level observations. Анализ конкретной кампании.
+description: Анализ конкретной кампании. Use when a user asks why a selected advertising campaign performed as it did or wants campaign-level observations.
 ---
 
 # campaign analysis / HolyPilot

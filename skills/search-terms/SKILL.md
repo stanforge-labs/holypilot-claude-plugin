@@ -1,6 +1,6 @@
 ---
 name: search-terms
-description: Use when the user asks which real Google Ads search queries triggered ads and where spend may be wasted. Поисковые запросы Google Ads.
+description: Поисковые запросы Google Ads. Use when the user asks which real Google Ads search queries triggered ads and where spend may be wasted.
 ---
 
 # search terms / HolyPilot

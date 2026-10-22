@@ -1,6 +1,6 @@
 ---
 name: negative-keywords
-description: Use when reviewing existing Google Ads negative keywords or checking a proposed negative for conflicts, without writing. Проверка минус-слов и конфликтов.
+description: Проверка минус-слов и конфликтов. Use when reviewing existing Google Ads negative keywords or checking a proposed negative for conflicts, without writing.
 ---
 
 # negative keywords / HolyPilot
