@@ -1,8 +1,8 @@
 {
   "name": "holypilot",
   "displayName": "HolyPilot",
-  "version": "1.0.0",
-  "description": "Ваш персональный AI-маркетолог для анализа рекламы и аналитики прямо в Claude.",
+  "version": "1.0.1",
+  "description": "Your personal AI marketing assistant for advertising and analytics, right inside Claude.",
   "author": {
     "name": "HolyMedia",
     "url": "https://mcp.holymedia.kz/"
