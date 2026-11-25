@@ -1,15 +1,15 @@
 {
   "name": "holypilot",
   "displayName": "HolyPilot",
-  "version": "1.0.1",
-  "description": "Your personal AI marketing assistant for advertising and analytics, right inside Claude.",
+  "version": "1.0.2",
+  "description": "Analyze advertising performance, compare reporting periods and prepare marketing reports with 15 Skills and the HolyMedia read-only MCP connector.",
   "author": {
     "name": "HolyMedia",
     "url": "https://mcp.holymedia.kz/"
   },
   "homepage": "https://mcp.holymedia.kz/",
   "icon": "./assets/holypilot-favicon.png",
-  "documentationUrl": "https://mcp.holymedia.kz/",
+  "documentationUrl": "https://github.com/stanforge-labs/holypilot-claude-plugin#holymedia-mcp-connector",
   "supportUrl": "https://mcp.holymedia.kz/support",
   "privacyPolicyUrl": "https://mcp.holymedia.kz/privacy",
   "termsOfServiceUrl": "https://mcp.holymedia.kz/terms",
